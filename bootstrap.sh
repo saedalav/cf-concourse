@@ -90,6 +90,7 @@ echo "docker machine version: $(docker-machine --version)"
 wget -O /home/vagrant/tmp/fly https://github.com/concourse/concourse/releases/download/$FLY_VERSION/fly_linux_amd64
 chmod +x /home/vagrant/tmp/fly
 sudo cp /home/vagrant/tmp/fly /usr/local/bin/fly
+sudo rm -rf /home/vagrant/tmp/fly
 
 # install cloud foundry cf
 sudo wget -O /etc/yum.repos.d/cloudfoundry-cli.repo https://packages.cloudfoundry.org/fedora/cloudfoundry-cli.repo
@@ -97,6 +98,9 @@ sudo yum install -y cf-cli
 
 # install cloud foundry uaac
 gem install cf-uaac
+
+# clean up tmp directory
+rm -rf /home/vagrant/tmp
 
 # install Virtualbox Guest Additions
 sudo yum install l-y inux-headers-$(uname -r) build-essential dkms
