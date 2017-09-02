@@ -111,3 +111,12 @@ sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run
 rm VBoxGuestAdditions_$VB_GUEST_VERSION.iso
 sudo umount /media/VBoxGuestAdditions
 sudo rmdir /media/VBoxGuestAdditions
+
+
+# below are extension software packages, not necessarily needed for daily use
+# concourse-up
+# bosh
+# git-duet
+# terraform
+# yaml
+# direnv
