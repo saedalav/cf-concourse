@@ -27,6 +27,9 @@ cur_dir=`pwd`
 echo "***** Current Directory: $cur_dir"
 mkdir -p $cur_dir/tmp
 
+# install EPEL for CentOS 7
+sudo yum install -y epel-release
+
 sudo yum update -y
 sudo yum install -y git
 sudo yum install -y wget
