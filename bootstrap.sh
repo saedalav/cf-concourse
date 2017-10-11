@@ -21,7 +21,7 @@ DOCKER_COMPOSE_VERSION="1.6.2"
 DOCKER_MACHINE_VERSION="v0.12.2"
 FLY_VERSION="v3.4.0"
 RUBY_VERSION="2.4.0"
-VB_GUEST_VERSION="5.1.26"
+VB_GUEST_VERSION="5.1.28"
 
 cur_dir=`pwd`
 echo "***** Current Directory: $cur_dir"
@@ -53,6 +53,18 @@ source /etc/profile.d/rvm.sh
 rvm reload
 rvm requirements run
 rvm install $RUBY_VERSION
+
+# Install python-devel + pip for python 2 
+sudo yum install python-devel
+curl -O https://bootstrap.pypa.io/get-pip.py
+python get-pip.py --user
+rm get-pip.py
+
+# Install aws-cli 
+pip install awscli --upgrade --user
+
+# Install ansible
+sudo yum install ansible
 
 #sudo yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel maven
 
