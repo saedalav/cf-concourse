@@ -115,6 +115,8 @@ gem install cf-uaac
 rm -rf /home/vagrant/tmp
 
 # install Virtualbox Guest Additions
+KERN_DIR=/usr/src/kernels/`uname -r`
+export KERN_DIR
 sudo yum install l-y inux-headers-$(uname -r) build-essential dkms
 wget http://download.virtualbox.org/virtualbox/$VB_GUEST_VERSION/VBoxGuestAdditions_$VB_GUEST_VERSION.iso
 sudo mkdir /media/VBoxGuestAdditions
@@ -124,6 +126,7 @@ rm VBoxGuestAdditions_$VB_GUEST_VERSION.iso
 sudo umount /media/VBoxGuestAdditions
 sudo rmdir /media/VBoxGuestAdditions
 
+echo "Provisioning completed"
 
 # below are extension software packages, not necessarily needed for daily use
 # concourse-up
